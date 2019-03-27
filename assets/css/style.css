@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    margin: 0 auto;
+    background: url("../images/vintage.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.container {
+text-align: center;
+background: coral;
+margin-left: 160px;
+margin-right: 160px;
+height: 700px;
+position: relative;
+}
+
+.content{
+
+    
+    
+}
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 73px;
+    letter-spacing: 0.1in;
+    padding-top: 65px;
+    text-align: center;
+    /* height: 600px;
+    weight: 800px; */
+} 
+p {
+    padding-top: 45px;
+}
+/* vinteage car section */
+#vintagecar  {
+    text-align: right;
+    margin-right: 50px;
+    position: absolute;
+}
+
+/* footer section */
+
+.content {
+    min-height: 35%;
+  }
+    .content-inside {
+    padding: 20px;
+    padding-bottom: 30px;
+  }
+    .footer {
+    height: 30px;
+    background-color: coral;
+    text-align: center;
+    clear: both;
+    
+  }
