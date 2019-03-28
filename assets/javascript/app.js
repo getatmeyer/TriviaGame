@@ -85,10 +85,11 @@ var seventiesQuestion = [{
             // reset the list of choices to HTML
             $("#choices").append("<p>" + choiceHolder[i].choices + "</p>")
             }
-            displayChoices(sevetiesQuestion);
+            // displayChoices(sevetiesQuestion);
             
                 
-    } showQuestions(seventiesQuestion); //invoke showQuestion function
+    } showQuestions(seventiesQuestion);
+      displayChoices(sevetiesQuestion); //invoke showQuestion function
     //showQuestion section ends
     
     function showResults ( seventiesQuestion, ) {
