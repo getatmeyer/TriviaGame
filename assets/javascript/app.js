@@ -1,40 +1,20 @@
 
 var triviaContainer = document.getElementById('triviagame');
-console.log(triviaContainer); // PASSED>
+    var choiceContainer = document.getElementById('choiceContainer')
 var resultsContainer = document.getElementById('results');
-console.log(resultsContainer); // PASSED>
 var submitButton = document.getElementById('submit');
-console.log(submitButton); //PASED
 var question = 0;
-console.log(question + "question"); //PASSED
 var choices;
-console.log(choices = "choices"); // PASSED
 var correctAnswer;
-console.log(correctAnswer = "correctAnswer"); // PASSED
 var answers;
-console.log(answer = "answer"); //PASSED>
-
 var userAnswer;
-console.log(userAnswer = "userAnswer"); // PASSED>
-
 var numCorrect;
-console.log(numCorrect = "++"); //PASSED>
-
 var answerContainers;
-console.log(answerContainer = "answerContainer"); //PASSED
-
 var output = [];
-console.log(output = "output"); //PASSED>
 var holder = []; // 
 
 // $(document).ready(function() {
 //     $("#quiz").hide()
-
-
-
-
-
-
 
 var seventiesQuestion = [{
     question: "The line Houston, we've had a problem was famously uttered aboard what spaceship?",
@@ -65,53 +45,77 @@ var seventiesQuestion = [{
 {
     question: "When copyrighted in 1972, what was the orginal phrase that accompained the smiley face logo?",
     choices: ["Have a nice day", "Have a great day", "Have a happy day", "Oh happy day"],
-    correctAnswer: "2" 
+    correctAnswer: 2
 }
 
-]; //end questions section
-    // function section
+];  //end questions section
     function seventiesTrivia (triviaContainer, resultsContainer, submitButton) {
     // code will go here
-    console.log("seventiesTrivia"); // printed to screen, PASSED
+    // console.log("seventiesTrivia"); // printed to screen, PASSED
     
-        function showQuestions( seventiessQuestion) {
-        console.log("showQuestions");
+        function showQuestions( questionHolder ) {
+        console.log("showQuestions : loop questions below");
         
         output = [];
-        correctAnswer;
         
         // define output
-        output.join(
-        triviaContainer + output
-    )
+        output.join(triviaContainer + output)
+        // loop through each question..
 
-        // loop through each question...
-        for (var i = 0; i < seventiesQuestion.length; i++) {
-        console.log("seventiesQuestion" + i ); // printed to screen, PASSED>
-        
-        // reset the list of answers
+        for (var i = 0; i < questionHolder.length;  i++) {
+        console.log(questionHolder[i] ); // printed to screen, PASSED>
+        // reset the list of question to HTML
+        $("#triviagame").append("<p>" + questionHolder[i].question + "</p>")
         correctAnswers = [];
-
-        
         }
-    } showQuestions(); //invoke showQuestion function
+        
+
+            } // displaychoices section
+            function displayChoices (choiceHolder) {
+            console.log("displaychoices : loop choices below");
+
+            output = [];
+            choices = 0;
+
+            // define output + choices
+            output.join(choices + output)
+            // loop through each choice..
+            for (var i = 0; i < choiceHolder.length; i++) {
+                console.log(choiceHolder[i]); // SORT OF, PASSED
+            // reset the list of choices to HTML
+            $("#choices").append("<p>" + choiceHolder[i].choices + "</p>")
+            }
+            displayChoices(sevetiesQuestion);
+            
+                
+    } showQuestions(seventiesQuestion); //invoke showQuestion function
     //showQuestion section ends
     
     function showResults ( seventiesQuestion, ) {
-    // code will go here
-    console.log("showResults");
-    
+    console.log("showResults : loop showResults below");
 
     // gather answers from trivia
     output = [];
-    answerContainesers = correctAnswer.quertySelectorAll('.answers') //FAILED>
+    answerContainesers = document.querySelectorAll('#results') //FAILED>
 
     // keep track of user's answers
     userAnswer = '';
     numCorrect = 0;
 
+    //define output
+    output.join(resultsContainer + output)
+    // loop through each answer
+    for (var i = 0; i < resultHolder.length; i++) {
+    console.log(resultHolder[i] );
+    //reset 
+
+    
+        
+        
+    }
+
     // loop for each question
-    for (var i=0; i< seventiesQuestion.length; i++) {
+    // for (var i=0; i< seventiesQuestion.length; i++) {
     
 
      // if answer is correct
@@ -119,15 +123,15 @@ var seventiesQuestion = [{
        numCorrect++;
     
     //find matched answer
-    userAnswer = (answerContainers[i].quertySelector()) //FAILED>
+    userAnswer = (answerContainers[i].querySelector()) //FAILED>
 
     }
-    showQuestions(question, triviaContainer);
-    // when user click sumbit, show results
-    sumbitButton.onclick = function() {
-        // showResults (questions, quizContainer, resultContainer);
-    }
-  }
+    // showResult(question, triviaContainer);
+    // // when user click sumbit, show results
+    // sumbitButton.onclick = function() {
+    //     // showResults (questions, quizContainer, resultContainer);
+    // }
+  
 
 } showResults(); // invoke showResults function, PASSED>
 //  close showResult function
