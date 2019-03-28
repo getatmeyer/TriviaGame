@@ -23,7 +23,7 @@ var seventiesQuestion = [{
     
 }, 
 {
-    question: "On December 29, 1972 what famed weekely magazine ceased publication only to remerge as a monthly magazine in 1978",
+    question: "On December 29, 1972 what famed weekely magazine ceased publication only to remerge as a monthly magazine in 1978?",
     choices: ["Look", "Life", "Focused", "The Saturday Evening Post"],
     correctAnswer: 1
 }, 
@@ -48,8 +48,8 @@ var seventiesQuestion = [{
     correctAnswer: 2
 }
 
-];  //end questions section
-    function seventiesTrivia (triviaContainer, resultsContainer, submitButton) {
+];  //end questions sectionv
+    // function seventiesTrivia (triviaContainer, resultsContainer, submitButton) {
     // code will go here
     // console.log("seventiesTrivia"); // printed to screen, PASSED
     
@@ -63,86 +63,19 @@ var seventiesQuestion = [{
         // loop through each question..
 
         for (var i = 0; i < questionHolder.length;  i++) {
+            
         console.log(questionHolder[i] ); // printed to screen, PASSED>
+        
         // reset the list of question to HTML
-        $("#triviagame").append("<p>" + questionHolder[i].question + "</p>")
+        $("#triviagame").prepend("<p>" + questionHolder[i].question + "</p>")
         correctAnswers = [];
         for (var j =0; j < seventiesQuestion[i].choices.length; i++){
-            $("#triviagame").append("<p>" + questionHolder[i].choices[j] + "</p>")
+        $("#choices").append( "<p>" + questionHolder[i].choices[j] + "</p>")
+
         }
-    }
-             // displaychoices section
-            // function displayChoices (choiceHolder) {
-            // console.log("displaychoices : loop choices below");
-
-            // output = [];
-            // choices = 0;
-
-            // define output + choices
-            // output.join(choices + output)
-            // loop through each choice..
-            // for (var i = 0; i < choiceHolder.length; i++) {
-                // console.log(choiceHolder[i]); // SORT OF, PASSED
-            // reset the list of choices to HTML
-            // $("#choices").append("<p>" + choiceHolder[i].choices + "</p>")
-            // choices = [];
-            
-            // displayChoices(sevetiesQuestion);
-            
-                
-    } showQuestions(seventiesQuestion); //showQuestion section ends
-    
-    // function showResults ( seventiesQuestion, ) {
-    // console.log("showResults : loop showResults below");
-// 
-    // gather answers from trivia
-    // output = [];
-    // answerContainesers = document.querySelectorAll('#results') //FAILED>
-
-    // keep track of user's answers
-    // userAnswer = '';
-    // numCorrect = 0;
-
-    //define output
-    // output.join(resultsContainer + output)
-    // loop through each answer
-    // for (var i = 0; i < resultHolder.length; i++) {
-    // console.log(resultHolder[i] );
-    //reset 
-
-    
         
-        
-    // }
-
-    // loop for each question
-    // for (var i=0; i< seventiesQuestion.length; i++) {
     
-
-     // if answer is correct
-    // if(userAnswer === question[i].correctAnswer) {
-    //    numCorrect++;
-    
-    //find matched answer
-    // userAnswer = (answerContainers[i].querySelector()) //FAILED>
-
-    // }
-    // showResult(question, triviaContainer);
-    // // when user click sumbit, show results
-    // sumbitButton.onclick = function() {
-    //     // showResults (questions, quizContainer, resultContainer);
-    // }
-  
-
-// } showResults(); // invoke showResults function, PASSED>
-//  close showResult function
-    // invoke these functions
 }
-// seventiesTrivia(); // invoke seventiesTrivia call, PASSED>
-// showQuestions();
-    // invoke these functions 
-    // triviaContainer.innerHTML = output.join(''); 
-    // showQuestions(); //FAILED>
-    // seventiesTrivia(); // FAILED>
-    // showResults(questions, quizContainer, resultsContainer); //FAILED>
+}showQuestions(seventiesQuestion,);
+    
 

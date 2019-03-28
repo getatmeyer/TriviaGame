@@ -15,13 +15,19 @@ background: coral;
 margin-left: 160px;
 margin-right: 160px;
 height: 700px;
-position: relative;
+/* position: relative; */
 }
 
-.content{
+#triviagame {
+text-align: center;   
 
-    
-    
+}
+p {
+ padding: 7px;
+ text-align: center;
+ display: inline-block;
+ justify-content: center;
+
 }
 h1 {
     font-family: 'Shadows Into Light', cursive;
@@ -32,14 +38,15 @@ h1 {
     /* height: 600px;
     weight: 800px; */
 } 
-p {
-    padding-top: 45px;
+.choices {
+  text-align: center;
+  display: inline-block;
 }
 /* vinteage car section */
 #vintagecar  {
     text-align: right;
     margin-right: 50px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 /* footer section */
