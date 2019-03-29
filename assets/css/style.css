@@ -29,6 +29,9 @@ p {
  justify-content: center;
 
 }
+.question {
+  display: inline;
+}
 h1 {
     font-family: 'Shadows Into Light', cursive;
     font-size: 73px;

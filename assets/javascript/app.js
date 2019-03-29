@@ -64,10 +64,11 @@ var seventiesQuestion = [{
         console.log(questionHolder[i] ); // printed to screen, PASSED>
         
         // reset the list of question to HTML
-        $("#triviagame").prepend("<p>" + questionHolder[i].question + "</p>")
+        $("#triviagame").prepend("<p id='question"+ i +"' class='question'>" + questionHolder[i].question + "</p>")
         correctAnswers = [];
+        //Changed: now appending the above <p> with dynamic id. I changes after each question, j changes with each choice per question.
         for (var j =0; j < seventiesQuestion[i].choices.length; j++){
-        $("#choices").append( "<p>" + questionHolder[i].choices[j] + "</p>")
+        $("#question"+ i).append( "<input type='radio'>" + questionHolder[i].choices[j] + "</input>")
         } 
 }
 }showQuestions(seventiesQuestion,);
