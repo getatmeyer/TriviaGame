@@ -1,6 +1,6 @@
 
 var triviaContainer = document.getElementById('triviagame');
-    var choiceContainer = document.getElementById('choiceContainer')
+var choiceContainer = document.getElementById('choiceContainer')
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 var question = 0;
@@ -48,34 +48,54 @@ var seventiesQuestion = [{
     correctAnswer: 2
 }
 
-];  //end questions sectionv
-    // function seventiesTrivia (triviaContainer, resultsContainer, submitButton) {
-    // code will go here
-    // console.log("seventiesTrivia"); // printed to screen, PASSED
-    
+];  
         function showQuestions( questionHolder ) {
         console.log("showQuestions : loop questions below");
         
         output = [];
+        choices;
         
         // define output
         output.join(triviaContainer + output)
         // loop through each question..
 
-        for (var i = 0; i < questionHolder.length;  i++) {
+        for (var i = 0; i < questionHolder.length; i++) {
             
         console.log(questionHolder[i] ); // printed to screen, PASSED>
         
         // reset the list of question to HTML
         $("#triviagame").prepend("<p>" + questionHolder[i].question + "</p>")
         correctAnswers = [];
-        for (var j =0; j < seventiesQuestion[i].choices.length; i++){
+        for (var j =0; j < seventiesQuestion[i].choices.length; j++){
         $("#choices").append( "<p>" + questionHolder[i].choices[j] + "</p>")
-
-        }
-        
-    
+        } 
 }
 }showQuestions(seventiesQuestion,);
-    
 
+function showResults () {
+
+    // gather answers from triviaContainer
+    answerContainers = triviaContainer.querySelectorAll('answers')
+
+    // keep track of user's answers
+    userAnswer = '';
+    numCorrect = 0;
+
+    // loop for each answer
+    for (var a = 0; a < seventiesQuestion[a].correctAnswer.length; index++) {
+
+        // if answer is correct
+        if (uswerAnswer === questions[i]. correctAnswer) {
+            numCorrect ++;
+            alert("Correct!");
+
+            userAnswer = (answerContainers[a].querySelector())
+
+        }
+
+    }
+
+
+
+
+}showResults();
