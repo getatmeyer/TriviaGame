@@ -1,102 +1,119 @@
-
+// GLOBAL VARIABLES
 var triviaContainer = document.getElementById('triviagame');
 var choiceContainer = document.getElementById('choiceContainer')
 var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
-var question = 0;
-var choices;
-var correctAnswer;
-var answers;
+// var submitButton = document.getElementById('submit');
+
 var userAnswer;
-var numCorrect;
-var answerContainers;
-var output = [];
-var holder = []; // 
+var answerCorrect = 0;
+var answerIncorrect = 0;
+var time = 5;
+var intervalId;
+var clock = false;
 
-// $(document).ready(function() {
-//     $("#quiz").hide()
-
-var seventiesQuestion = [{
-    question: "The line Houston, we've had a problem was famously uttered aboard what spaceship?",
-    choices: ["Skylab", "Apollo 11", "Gemini 12," , "Apollo 13"],
-    correctAnswer: 3
-    
+var questions = [ {
+    question: 'The line Houston, we had a problem was famously uttered aboard what spaceship?',
+    choices: ["Skylab", "Apollo-11", "Gemini-12," , "Apollo-13"],
+    correctAnswer: "Apollo-13",
 }, 
 {
     question: "On December 29, 1972 what famed weekely magazine ceased publication only to remerge as a monthly magazine in 1978?",
     choices: ["Look", "Life", "Focused", "The Saturday Evening Post"],
-    correctAnswer: 1
+    correctAnswer: "Life",
 }, 
 {
     question: "Which 1979 flim co-starred a ginger-haired cat named Jones?",
     choices: ["Annie", "Alien", "Norma", "Coming Home"],
-    correctAnswer: 1
-},
-{
-    question: "Which horse won the 1973 Kentucky Debry, Preakness, and Belmont Stakes becoming the 9th horse to take home the Triple Crown?",
-    choices: ["Citation", "Affirmed", "Seattle Slew", "Secertariat"],
-    correctAnswer: 3
+    correctAnswer: "Alien",
 }, 
 {
-    question: "The 70's catchpharse Dyn-O-mite was made popular by the sitcom Good Times, which was a spin off of what other Norman  Lear Project?",
-    choices: ["Muade", "The Jeffersons", "All in the Family", "Standord and Son"],
-    correctAnswer: 1
-},
-{
     question: "When copyrighted in 1972, what was the orginal phrase that accompained the smiley face logo?",
-    choices: ["Have a nice day", "Have a great day", "Have a happy day", "Oh happy day"],
-    correctAnswer: 2
+    choices: ["Have a nice day", "Have a great day", "Have-a-happy-day", "Oh happy day"],
+    correctAnswer: "Have-a-happy day",
 }
 
 ];  
-        function showQuestions( questionHolder ) {
-        console.log("showQuestions : loop questions below");
-        
-        output = [];
-        choices;
-        
-        // define output
-        output.join(triviaContainer + output)
-        // loop through each question..
+///////// Click Button function ////////////
+$(document).ready(function() {
 
-        for (var i = 0; i < questionHolder.length; i++) {
-            
-        console.log(questionHolder[i] ); // printed to screen, PASSED>
-        
-        // reset the list of question to HTML
-        $("#triviagame").prepend("<p id='question"+ i +"' class='question'>" + questionHolder[i].question + "</p>")
-        correctAnswers = [];
-        //Changed: now appending the above <p> with dynamic id. I changes after each question, j changes with each choice per question.
-        for (var j =0; j < seventiesQuestion[i].choices.length; j++){
-        $("#question"+ i).append( "<input type='radio'>" + questionHolder[i].choices[j] + "</input>")
-        } 
-}
-}showQuestions(seventiesQuestion,);
+    var vintageCar = $(".vintagecar");
+    console.log(vintageCar);
+    
 
-function showResults () {
+    $("#Time-left").hide();
+    $(".triviagame").hide();
+    $("#results").hide();
+    $("#start").on("click", start);
+})
+///////// Click Button function ////////////
+$("#start").click(function() {
+    $("#Time-left").show();
+    $(".triviagame").show();
+    $("#start").hide();
+    $("#results").show();
 
-    // gather answers from triviaContainer
-    answerContainers = triviaContainer.querySelectorAll('answers')
-
-    // keep track of user's answers
-    userAnswer = '';
-    numCorrect = 0;
-
-    // loop for each answer
-    for (var a = 0; a < seventiesQuestion[a].correctAnswer.length; index++) {
-
-        // if answer is correct
-        if (uswerAnswer === questions[i]. correctAnswer) {
-            numCorrect ++;
-            alert("Correct!");
-
-            userAnswer = (answerContainers[a].querySelector())
-
-        }
-
+})
+/////////Time function///////////////////
+function start() {
+    if (clock === false) {
+        intervalId = setInterval(count, 1000);
+        clock = true;
     }
+};
+function count() {
+    time--;
+    $("#interval").text(time);
+    if (time == 0 ) {
+        alert("Time's over.")
+        endCLock();
+    };
+};
+$("#results").click(function() {
+    clearInterval(intervalId);
+});
 
+function endCLock() {
+    $("#interval").hide();
+    $("button").hide();
+    $("#Time-left").hide();
 
+        
+/////RenderScore /////////////
 
+    if ($("input[name=question0]:checked").val() === questions[0].correctAnswer) {
+        
+        answerCorrect++;
+    } else {
+        answerIncorrect++;
+    }
+    if ($("input[name=question1]:checked").val() === questions[1].correctAnswer) {
+        answerCorrect++;
+    } else {
+        answerIncorrect++;
+    }
+    if ($("input[name=question2]:checked").val() === questions[2].correctAnswer) {
+        answerCorrect++;
+    } else {
+        answerIncorrect++;
+    }
+    if ($("input[name=question3]:checked").val() === questions[3].correctAnswer) {
+        answerCorrect++;
+    } else {
+        answerIncorrect++;
+    }
+    
+    /// display answers converted into HTML screen
+    $("#displayResults").append("You got " + answerCorrect + " Correct and " + answerIncorrect + " incorrect.");
 
-}showResults();
+    };
+  
+// questions/choices converted into HTML screen
+for (var i = 0; i < questions.length; i++){
+
+    $(".triviagame").append( "<h5>" + questions[i].question + "</h5>" );
+
+    for (var j = 0; j < questions[i].choices.length; j++) {
+        
+        $(".triviagame").append("<input type='radio' name='question" + i + "' value = " +  questions[i].choices[j] + " > " + questions[i].choices[j]);
+    };
+};
