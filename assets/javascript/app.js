@@ -7,7 +7,7 @@ var resultsContainer = document.getElementById('results');
 var userAnswer;
 var answerCorrect = 0;
 var answerIncorrect = 0;
-var time = 5;
+var time = 20;
 var intervalId;
 var clock = false;
 
